@@ -1,8 +1,4 @@
-class Node():
-
-    def __init__(self, data, next):
-        self.data = data
-        self.next = next
+import node
 
 
 class Queue():
@@ -11,13 +7,13 @@ class Queue():
 
     def enqueue(self, value):
         if (self.head == None):
-            self.head = Node(value, None)
+            self.head = node.Node(value, None)
         else:
             current = self.head
             isEnd = False
             while (not isEnd):
                 if (current.next == None):
-                    current.next = Node(value, None)
+                    current.next = node.Node(value, None)
                     isEnd = True
                 current = current.next
 

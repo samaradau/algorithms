@@ -1,8 +1,4 @@
-class Node():
-
-    def __init__(self, data, next):
-        self.data = data
-        self.next = next
+import node
 
 
 class Stack():
@@ -11,10 +7,10 @@ class Stack():
 
     def push(self, value):
         if (self.head == None):
-            self.head = Node(value, None)
+            self.head = node.Node(value, None)
         else:
             buf = self.head
-            self.head = Node(value, None)
+            self.head = node.Node(value, None)
             self.head.next = buf
 
     def pop(self):
