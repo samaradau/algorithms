@@ -1,10 +1,4 @@
-import codecs
-
-# 0 1 2 3 4 5 6 7 8 9 A B C D E F
-
-# 360 / 16 = 22.5
-
-digits = {
+alphabeth = {
     "0": 0,
     "1": 22.5,
     "2": 45,
@@ -24,29 +18,29 @@ digits = {
 }
 
 
-def getPositions(msg):
+def calculatePositions(message):
     res = []
 
-    for letter in msg:
+    for letter in message:
         hexCode = format(ord(letter), "x")
 
         for hexChar in hexCode:
-            res.append(digits[f"{hexChar}"])
+            res.append(alphabeth[f"{hexChar}"])
 
     return res
 
 
-def turnCamera(positions):
+def turnCameraOn(positions):
     index = 1
     posCount = len(positions)
-    deviation = positions[0]
+    delta = positions[0]
 
     while (index < posCount):
-        print(deviation)
-        deviation = positions[index] - positions[index - 1]
+        print(delta)
+        delta = positions[index] - positions[index - 1]
         index += 1
 
 
-msg = input("Type any message: ")
-positions = getPositions(msg)
-turnCamera(positions)
+message = input("Type any message: ")
+positions = calculatePositions(message)
+turnCameraOn(positions)

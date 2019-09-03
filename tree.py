@@ -24,6 +24,7 @@ class Node():
 
         return False
 
+
 class Tree():
 
     def __init__(self, value):
@@ -51,6 +52,7 @@ class Tree():
 
     def contains(self, value):
         return self.head.contains(value)
+
 
 tree = Tree(5)
 tree.add(4)
