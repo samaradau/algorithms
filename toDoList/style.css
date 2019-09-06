@@ -1,0 +1,8 @@
+.employee {
+    padding: 12px 0;
+}
+
+.employee__property {
+    padding: 0 20px;
+    text-align: center;
+}
